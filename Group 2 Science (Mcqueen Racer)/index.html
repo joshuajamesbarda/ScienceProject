@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catch The Apple</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="hud">APPLES: <span id="score">0</span></div>
+
+    <div id="gameOver">
+        <h1 style="margin:0; color:#e74c3c;">SEASON OVER!</h1>
+        <p>TOTAL HARVEST: <span id="finalScore">0</span></p>
+        <button onclick="resetGame()">RE-HARVEST</button>
+    </div>
+
+    <canvas id="gameCanvas"></canvas>
+
+    <!-- Linking the external JavaScript file -->
+    <script src="code.js"></script>
+</body>
+</html>

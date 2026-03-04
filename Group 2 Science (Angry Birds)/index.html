@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angry Birds Physics</title>
+    <!-- Link to the CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="ui">
+        <div class="stat">Current Potential<span id="pe" class="val">0 J</span></div>
+        <div class="stat">Current Kinetic<span id="ke" class="val" style="color:#ff5722">0 J</span></div>
+    </div>
+    
+    <div id="scoreBoard">0</div>
+
+    <div id="gameOverModal">
+        <h1>WASTED!</h1>
+        <div class="final-stat">Pillars Cleared<span id="finalScore" class="big-num">0</span></div>
+        <div class="final-stat">Max Energy Reached<span id="maxPE" style="font-weight:bold; color:#f39c12">0 J</span></div>
+        <div class="final-stat">Rank: <span id="rank" style="color:#2980b9; font-weight:bold">Novice</span></div>
+        <button id="restartBtn">RE-LAUNCH</button>
+    </div>
+
+    <canvas id="gameCanvas"></canvas>
+
+    <!-- Link to the JavaScript file -->
+    <script src="code.js"></script>
+</body>
+</html>

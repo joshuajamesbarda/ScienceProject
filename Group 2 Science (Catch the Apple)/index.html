@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>McQueen Racer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="scoreDisplay">0</div>
+
+    <div id="screen">
+        <h1 style="margin:0;">CRASH!</h1>
+        <p>Score: <span id="lastScore" style="color:#f1c40f; font-size:30px;">0</span></p>
+        <button onclick="resetGame()">RESTART</button>
+    </div>
+
+    <canvas id="gameCanvas"></canvas>
+
+    <!-- Link to the JavaScript file -->
+    <script src="code.js"></script>
+</body>
+</html>

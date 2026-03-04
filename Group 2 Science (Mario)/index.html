@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mario Jumper</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="hud">SCORE: <span id="score">0</span></div>
+    <div id="comboIndicator">X2</div>
+    
+    <div id="gameOver">
+        <h1 style="margin:0;">GAME OVER</h1>
+        <span class="score-val" id="finalScore">0</span>
+        <button onclick="resetGame()">PLAY AGAIN</button>
+    </div>
+
+    <canvas id="gameCanvas"></canvas>
+
+    <!-- Linking the external JavaScript file -->
+    <script src="code.js"></script>
+</body>
+</html>
