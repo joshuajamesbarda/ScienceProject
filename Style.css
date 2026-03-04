@@ -1,12 +1,18 @@
+/* Ensure the browser uses the full height */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 * {
     box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial Black', sans-serif;
+    font-family: 'Arial Black', 'Arial', sans-serif;
     background: radial-gradient(circle, #2c3e50 0%, #000000 100%);
+    background-attachment: fixed; /* Keeps background still while scrolling */
     color: white;
     min-height: 100vh;
     display: flex;
@@ -15,89 +21,100 @@ body {
 }
 
 .container {
-    width: 90%;
+    width: 95%;
     max-width: 1200px;
     text-align: center;
-    padding: 20px;
+    padding: 40px 20px;
 }
 
 header h1 {
-    font-size: 50px;
-    margin-bottom: 5px;
+    font-size: clamp(32px, 8vw, 60px); /* Makes title responsive */
+    margin: 0 0 10px 0;
     letter-spacing: 4px;
     color: #f1c40f;
     text-shadow: 4px 4px #c0392b;
 }
 
 header p {
-    font-size: 18px;
+    font-size: clamp(14px, 2vw, 20px);
     color: #bdc3c7;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 
 .game-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
 }
 
 /* Card Styling */
 .game-card {
-    background: rgba(255, 255, 255, 0.1);
-    border: 3px solid rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
-    padding: 30px 20px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    padding: 40px 20px;
     text-decoration: none;
     color: white;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
-    overflow: hidden;
+    backdrop-filter: blur(5px);
 }
 
 .game-card:hover {
-    transform: translateY(-10px) scale(1.05);
-    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-15px) scale(1.03);
+    background: rgba(255, 255, 255, 0.15);
     border-color: #f1c40f;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
 }
 
 .icon {
-    font-size: 60px;
-    margin-bottom: 15px;
+    font-size: 70px;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
 }
 
 .game-card h2 {
-    font-size: 20px;
+    font-size: 18px;
     margin: 10px 0;
     text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .play-btn {
     background: #e74c3c;
-    padding: 10px 20px;
+    color: white;
+    padding: 12px 25px;
     border-radius: 50px;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: bold;
-    margin-top: 15px;
-    transition: background 0.2s;
+    margin-top: 20px;
+    transition: 0.3s;
+    border: 2px solid transparent;
 }
 
 .game-card:hover .play-btn {
     background: #f1c40f;
     color: #000;
+    transform: scale(1.1);
 }
 
-/* Specific Card Themes */
-.mario:hover { box-shadow: 0 0 20px #e74c3c; }
-.birds:hover { box-shadow: 0 0 20px #3498db; }
-.mcqueen:hover { box-shadow: 0 0 20px #e67e22; }
-.apple:hover { box-shadow: 0 0 20px #2ecc71; }
-.hill:hover { box-shadow: 0 0 20px #9b59b6; }
+/* Specific Glow Effects */
+.mario:hover { box-shadow: 0 0 25px rgba(231, 76, 60, 0.5); }
+.birds:hover { box-shadow: 0 0 25px rgba(52, 152, 219, 0.5); }
+.mcqueen:hover { box-shadow: 0 0 25px rgba(230, 126, 34, 0.5); }
+.apple:hover { box-shadow: 0 0 25px rgba(46, 204, 113, 0.5); }
+.hill:hover { box-shadow: 0 0 25px rgba(155, 89, 182, 0.5); }
 
-@media (max-width: 600px) {
-    header h1 { font-size: 30px; }
+/* Tablet and Mobile adjustments */
+@media (max-width: 768px) {
+    .container { padding: 20px; }
+    .game-grid { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; }
+}
+
+@media (max-width: 480px) {
+    header h1 { font-size: 32px; }
     .game-grid { grid-template-columns: 1fr; }
 }
